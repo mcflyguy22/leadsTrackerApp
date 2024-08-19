@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*
+
+Style our app according to the provided design!
+
+green color -> #5f9341
+
+*/
+
+
+input {
+    width: 100%;
+    height: 1.5rem;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #5f9341;
+    margin-bottom: 4px;
+    min-width: 400px;
+}
+
+input:hover {
+    background: lightgray;
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+button {
+    background: #5f9341;
+    border: 1px solid #5f9341;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+#delete-btn {
+    background: white;
+    color: #5f9341;
+}
+
+button:hover{
+    box-shadow: 0px 2px 6px black;
+    cursor: pointer;
+}
+
+ul {
+    margin-top: 20px;
+    list-style: none;
+    padding-left: 0px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+li a {
+    color: #5f9341;
+    font-weight: bold;
+}
+
+/* a::before{
+    content: 'https://';
+} */
+
+li a:hover{
+    color: rgb(65, 117, 35);
+}
