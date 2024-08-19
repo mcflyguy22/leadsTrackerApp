@@ -45,11 +45,13 @@ button {
 }
 
 #export-btn {
-    width: auto;
+    width: 20px;
     background: none;
     color: #5f9341;
     border: none;
     font-size: 16px;
+    text-align: left;
+    padding: 5px;
 }
 
 #export-btn:hover{
