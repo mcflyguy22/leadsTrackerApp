@@ -5,15 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>leads tracker APP</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.sheetjs.com/xlsx-0.19.3/package/dist/xlsx.full.min.js"></script>
 </head>
 <body>
     <input type="text" id="input-el" placeholder="lead url">
     <button id="input-btn">SAVE INPUT</button>
-    <button id="tab-btn">SAVE TAB</button>
-    <button id="delete-btn">DELETE ALL</button>
+    <button id="tab-btn" title="save the active tab url">SAVE TAB</button>
+    <button id="delete-btn" title="double click to delete leads">DELETE ALL</button>
+    <button id="export-btn" title="export leads to excel"><i class="fa fa-download" aria-hidden="true"></i></button>
     <ul id="ul-el">
 
     </ul>
+
+    <table id="export-tbl">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>URL</th>
+            </tr>
+        </thead>
+        <tbody id="leads-tbl">
+        </tbody>
+    </table>
     <script src="index.js"></script>
 </body>
 </html>

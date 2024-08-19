@@ -9,6 +9,9 @@ const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
 const deleteBtn = document.getElementById("delete-btn")
 const tabBtn = document.getElementById("tab-btn")
+const exportBtn = document.getElementById("export-btn")
+const tbodyEl = document.getElementById("leads-tbl")
+const tableEl = document.getElementById("export-tbl")
 
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage
@@ -37,19 +40,35 @@ deleteBtn.addEventListener("dblclick", function() {
     ulEl.textContent = "";
 });
 
+exportBtn.addEventListener("click", function() {
+    const wb = XLSX.utils.table_to_book(tableEl, { sheet: 'sheet-1' });
+    XLSX.writeFile(wb, 'MyTable.xlsx');    
+})
+
 function render(leads) {
     let listItems = ""
     for (let i=0; i < myLeads.length; i++) {
         listItems += `
-        <li>
-            <a href='${leads[i]}' target='_blank'>${leads[i]}</a>
-        </li>
+        <tr>
+            <td>${i + 1}</td>
+            <td><a href='${leads[i]}' target='_blank'>${leads[i]}</a></td>
+        </tr>
         `
         console.log(listItems)
     };
-    
-    ulEl.innerHTML = listItems;
+    tbodyEl.innerHTML = listItems;
+    // ulEl.innerHTML = listItems;
 }
+
+
+/* <tr>
+<td>1</td>
+<td>www.lead.html</td>
+</tr>
+<tr>
+<td>1</td>
+<td>www.lead.html</td>
+</tr> */
 
 
 
