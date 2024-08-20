@@ -1,12 +1,18 @@
-// const button = document.querySelector("#input-btn");
+// import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js"
+// import { getDatabase } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-database.js"
 
+// const firebaseConfig = {
+//     databaseURL: "https://leads-tracker-app-4f090-default-rtdb.firebaseio.com/"
+// }
+
+// const app = initializeApp(firebaseConfig)
+// const database = getDatabase(app)
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 
 let myLeads = []
 
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
-const ulEl = document.getElementById("ul-el")
 const deleteBtn = document.getElementById("delete-btn")
 const tabBtn = document.getElementById("tab-btn")
 const exportBtn = document.getElementById("export-btn")
@@ -15,6 +21,7 @@ const tableEl = document.getElementById("export-tbl")
 
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage
+    console.log(myLeads)
     render(myLeads)
 }
 
@@ -35,14 +42,14 @@ tabBtn.addEventListener("click", function() {
 })
 
 deleteBtn.addEventListener("dblclick", function() {
-    localStorage.clear();
-    myLeads=[];
-    tableEl.textContent = "";
+    localStorage.clear()
+    myLeads=[]
+    tbodyEl.textContent = ""
 });
 
 exportBtn.addEventListener("click", function() {
-    const wb = XLSX.utils.table_to_book(tableEl, { sheet: 'sheet-1' });
-    XLSX.writeFile(wb, 'MyTable.xlsx');    
+    const wb = XLSX.utils.table_to_book(tableEl, { sheet: 'sheet-1' })
+    XLSX.writeFile(wb, 'MyTable.xlsx');   
 })
 
 function render(leads) {
@@ -56,7 +63,7 @@ function render(leads) {
         `
         console.log(listItems)
     };
-    tbodyEl.innerHTML = listItems;
+    tbodyEl.innerHTML = listItems
 }
 
 
