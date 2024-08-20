@@ -37,7 +37,7 @@ tabBtn.addEventListener("click", function() {
 deleteBtn.addEventListener("dblclick", function() {
     localStorage.clear();
     myLeads=[];
-    ulEl.textContent = "";
+    tableEl.textContent = "";
 });
 
 exportBtn.addEventListener("click", function() {
@@ -57,24 +57,7 @@ function render(leads) {
         console.log(listItems)
     };
     tbodyEl.innerHTML = listItems;
-    // ulEl.innerHTML = listItems;
 }
-
-
-/* <tr>
-<td>1</td>
-<td>www.lead.html</td>
-</tr>
-<tr>
-<td>1</td>
-<td>www.lead.html</td>
-</tr> */
-
-
-
-
-
-
 
 
 
